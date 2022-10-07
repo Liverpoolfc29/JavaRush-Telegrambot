@@ -1,0 +1,1 @@
+Feel free to suggest new features via github issue. Note, that new features must be approved before start implement it to avoid the situation, when the time was spent, but the changes wouldn't added to the project.
