@@ -7,7 +7,7 @@ public class NoCommand implements Command {
 
     private final SendBotMessageService sendBotMessageService;
 
-    public final static String NO_COMMAND = "Я поддерживаю команды, начинающиеся со слеша(/).\n" +
+    public final static String NO_MESSAGE = "Я поддерживаю команды, начинающиеся со слеша(/).\n" +
             "\"Чтобы посмотреть список команд введите /help";
 
     public NoCommand(SendBotMessageService sendBotMessageService) {
@@ -16,7 +16,7 @@ public class NoCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), NO_COMMAND);
+        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), NO_MESSAGE);
     }
 
 }

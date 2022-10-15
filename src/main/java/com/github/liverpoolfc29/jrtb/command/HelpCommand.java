@@ -9,7 +9,7 @@ public class HelpCommand implements Command {
 
     private final SendBotMessageService sendBotMessageService;
 
-    public final static String HELP_COMMAND = String.format("✨<b>Дотупные команды</b>✨\n\n"
+    public final static String HELP_MESSAGE = String.format("✨<b>Дотупные команды</b>✨\n\n"
 
                     + "<b>Начать\\закончить работу с ботом</b>\n"
                     + "%s - начать работу со мной\n"
@@ -23,7 +23,7 @@ public class HelpCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), HELP_COMMAND);
+        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), HELP_MESSAGE);
     }
 
 }
