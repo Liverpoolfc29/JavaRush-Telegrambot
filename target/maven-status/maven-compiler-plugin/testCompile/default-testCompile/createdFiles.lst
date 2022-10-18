@@ -1,1 +1,9 @@
+com\github\liverpoolfc29\jrtb\command\StopCommandTest.class
+com\github\liverpoolfc29\jrtb\command\UnknownCommandTest.class
+com\github\liverpoolfc29\jrtb\command\CommandContainerTest.class
+com\github\liverpoolfc29\jrtb\command\HelpCommandTest.class
+com\github\liverpoolfc29\jrtb\command\NoCommandTest.class
+com\github\liverpoolfc29\jrtb\service\SendBotMessageServiceTest.class
 com\github\liverpoolfc29\jrtb\JavarushTelegramBotApplicationTests.class
+com\github\liverpoolfc29\jrtb\command\StartCommandTest.class
+com\github\liverpoolfc29\jrtb\command\AbstractCommandTest.class
