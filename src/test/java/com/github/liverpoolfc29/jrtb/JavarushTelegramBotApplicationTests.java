@@ -1,5 +1,8 @@
 
 /*
+
+// does not pass the test
+
 package com.github.liverpoolfc29.jrtb;
 
 import org.junit.jupiter.api.Test;
@@ -14,4 +17,5 @@ class JavarushTelegramBotApplicationTests {
 	}
 
 }
+
  */
