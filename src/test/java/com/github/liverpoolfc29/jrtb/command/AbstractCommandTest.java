@@ -3,6 +3,7 @@ package com.github.liverpoolfc29.jrtb.command;
 import com.github.liverpoolfc29.jrtb.bot.JavaRushTelegramBot;
 import com.github.liverpoolfc29.jrtb.service.SendBotMessageService;
 import com.github.liverpoolfc29.jrtb.service.SendBotMessageServiceImpl;
+import com.github.liverpoolfc29.jrtb.service.TelegramUserService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -13,6 +14,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 abstract class AbstractCommandTest {
 
     protected JavaRushTelegramBot javaRushTelegramBot = Mockito.mock(JavaRushTelegramBot.class);
+    protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(javaRushTelegramBot);
 
     abstract String getCommandName();
