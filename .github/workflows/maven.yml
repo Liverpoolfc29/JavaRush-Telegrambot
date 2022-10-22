@@ -17,7 +17,6 @@ jobs:
       - name: Set up MySQL
         uses: mirromutth/mysql-action@v1.1
         with:
-          mysql version:
           mysql database: 'dev_jrtb_db'
           mysql root password: '1892'
           mysql user: 'dev_jrtb_db_user'
