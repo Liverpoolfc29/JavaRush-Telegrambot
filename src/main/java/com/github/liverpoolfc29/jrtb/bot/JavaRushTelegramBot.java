@@ -2,11 +2,12 @@ package com.github.liverpoolfc29.jrtb.bot;
 
 import com.github.liverpoolfc29.jrtb.command.CommandContainer;
 import com.github.liverpoolfc29.jrtb.service.SendBotMessageServiceImpl;
+import com.github.liverpoolfc29.jrtb.service.TelegramUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
-
 
 import static com.github.liverpoolfc29.jrtb.command.CommandName.NO;
 
@@ -22,8 +23,11 @@ public class JavaRushTelegramBot extends TelegramLongPollingBot {
 
     private final CommandContainer commandContainer;
 
-    public JavaRushTelegramBot() {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
+    //Мы передаем в виде аргумента TelegramUserService, добавляя аннотацию Autowired. Это значит, что ее мы получим из Application Context.
+
+    @Autowired
+    public JavaRushTelegramBot(TelegramUserService telegramUserService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
     }
 
     @Override
