@@ -18,9 +18,16 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<unirest.version>3.13.11</unirest.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.konghq</groupId>
+			<artifactId>unirest-java</artifactId>
+			<version>${unirest.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-mysql</artifactId>
