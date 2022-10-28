@@ -2,15 +2,19 @@ F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\c
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\javarushclient\dto\GroupFilter.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\repository\entity\TelegramUser.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\command\StartCommand.java
+F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\command\AddGroupSubCommand.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\command\HelpCommand.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\bot\JavaRushTelegramBot.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\JavarushTelegramBotApplication.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\repository\TelegramUserRepository.java
+F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\repository\entity\GroupSub.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\javarushclient\dto\MeGroupInfoStatus.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\javarushclient\JavaRushGroupClient.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\command\UnknownCommand.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\command\StatCommand.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\command\CommandContainer.java
+F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\command\ListGroupSubCommand.java
+F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\service\GroupSubServiceImpl.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\service\TelegramUserServiceImpl.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\javarushclient\dto\GroupRequestArgs.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\javarushclient\dto\MeGroupInfo.java
@@ -19,6 +23,7 @@ F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\c
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\javarushclient\dto\GroupInfoType.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\command\NoCommand.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\command\Command.java
+F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\service\GroupSubService.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\service\TelegramUserService.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\service\SendBotMessageService.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\javarushclient\dto\GroupDiscussionInfo.java
@@ -27,3 +32,4 @@ F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\c
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\javarushclient\dto\GroupsCountRequestArgs.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\javarushclient\dto\GroupVisibilityStatus.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\javarushclient\dto\GroupInfo.java
+F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\repository\GroupSubRepository.java

@@ -1,6 +1,8 @@
 com\github\liverpoolfc29\jrtb\command\CommandContainerTest.class
 com\github\liverpoolfc29\jrtb\command\HelpCommandTest.class
 com\github\liverpoolfc29\jrtb\service\SendBotMessageServiceTest.class
+com\github\liverpoolfc29\jrtb\repository\GroupSubRepositoryIT.class
+com\github\liverpoolfc29\jrtb\service\GroupSubServiceTest.class
 com\github\liverpoolfc29\jrtb\javarushclient\JavaRushGroupClientTest.class
 com\github\liverpoolfc29\jrtb\command\AbstractCommandTest.class
 com\github\liverpoolfc29\jrtb\command\StopCommandTest.class
