@@ -1,5 +1,7 @@
 package com.github.liverpoolfc29.jrtb.command;
 
+import com.github.liverpoolfc29.jrtb.javarushclient.JavaRushGroupClient;
+import com.github.liverpoolfc29.jrtb.service.GroupSubService;
 import com.github.liverpoolfc29.jrtb.service.SendBotMessageService;
 import com.github.liverpoolfc29.jrtb.service.TelegramUserService;
 import org.junit.jupiter.api.Assertions;
@@ -19,7 +21,9 @@ public class CommandContainerTest {
     public void init() {
         SendBotMessageService sendBotMessageService = Mockito.mock(SendBotMessageService.class);
         TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
-        commandContainer = new CommandContainer(sendBotMessageService, telegramUserService);
+        JavaRushGroupClient javaRushGroupClient = Mockito.mock(JavaRushGroupClient.class);
+        GroupSubService groupSubService = Mockito.mock(GroupSubService.class);
+        commandContainer = new CommandContainer(sendBotMessageService, telegramUserService, javaRushGroupClient, groupSubService);
     }
 
     @Test
