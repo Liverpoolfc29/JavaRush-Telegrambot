@@ -5,17 +5,19 @@ import com.github.liverpoolfc29.jrtb.repository.GroupSubRepository;
 import com.github.liverpoolfc29.jrtb.repository.entity.GroupSub;
 import com.github.liverpoolfc29.jrtb.repository.entity.TelegramUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.ws.rs.NotFoundException;
 import java.util.Optional;
 
 /**
- *      Чтобы Spring Data заработала правильно и создалась запись many-to-many, нам нужно для группы подписки, которую мы создаем, достать из нашей БД юзера и добавить его в объект GroupSub.
- * Тем самым, когда мы передадим на сохранение эту подписку, будет создана еще и связь через таблицу group_x_user.
- *      Может быть ситуация, когда уже создана такая группа подписки и нужно просто добавить к ней еще одного юзера.
+ * Чтобы Spring Data заработала правильно и создалась запись many-to-many, нам нужно для группы подписки, которую мы создаем, достать из нашей БД юзера
+ * и добавить его в объект GroupSub. Тем самым, когда мы передадим на сохранение эту подписку, будет создана еще и связь через таблицу group_x_user.
+ * Может быть ситуация, когда уже создана такая группа подписки и нужно просто добавить к ней еще одного юзера.
  * Для этого мы сперва получаем по ID группы из БД, и если запись есть, работаем с ней, если нет — создаем новую.
- *      Важно отметить, что для работы с TelegramUser мы используем TelegramUserService, чтобы следовать последнему из принципов SOLID.
+ * Важно отметить, что для работы с TelegramUser мы используем TelegramUserService, чтобы следовать последнему из принципов SOLID.
  */
+@Service
 public class GroupSubServiceImpl implements GroupSubService {
 
     private final GroupSubRepository groupSubRepository;

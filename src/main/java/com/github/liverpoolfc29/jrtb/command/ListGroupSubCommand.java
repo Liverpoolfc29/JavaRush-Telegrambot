@@ -31,7 +31,7 @@ public class ListGroupSubCommand implements Command {
 
         String message = "Я нашел все подписки на группы: \n\n";
         String collectedGroups = telegramUser.getGroupSubs().stream()
-                .map(it -> "Group: " + it.getTitle() + " , ID = " + it.getId() + " \n")
+                .map(it -> " Group: " + it.getTitle() + ", ID = " + it.getId() + " \n")
                 .collect(Collectors.joining());
 
         sendBotMessageService.sendMessage(telegramUser.getChatId(), message + collectedGroups);

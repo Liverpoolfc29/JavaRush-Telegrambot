@@ -3,6 +3,7 @@ package com.github.liverpoolfc29.jrtb.bot;
 import com.github.liverpoolfc29.jrtb.command.CommandContainer;
 import com.github.liverpoolfc29.jrtb.javarushclient.JavaRushGroupClient;
 import com.github.liverpoolfc29.jrtb.service.GroupSubService;
+import com.github.liverpoolfc29.jrtb.service.GroupSubServiceImpl;
 import com.github.liverpoolfc29.jrtb.service.SendBotMessageServiceImpl;
 import com.github.liverpoolfc29.jrtb.service.TelegramUserService;
 import org.springframework.beans.factory.annotation.Autowired;
