@@ -2,10 +2,8 @@ package com.github.liverpoolfc29.jrtb.repository.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Telegram User entity.
@@ -22,5 +20,8 @@ public class TelegramUser {
 
     @Column(name = "active")
     private boolean active;
+
+    @ManyToMany(mappedBy = "telegramUsers", fetch = FetchType.EAGER)
+    private List<GroupSub> groupSubs;
 
 }
