@@ -17,6 +17,7 @@ import java.util.Optional;
 
 import static com.github.liverpoolfc29.jrtb.command.CommandName.DELETE_GROUP_SUB;
 import static com.github.liverpoolfc29.jrtb.command.AbstractCommandTest.prepareUpdate;
+import static java.util.Collections.singletonList;
 
 @DisplayName("Unit-level testing for DeleteGroupSubCommand")
 public class DeleteGroupSubCommandTest {
@@ -27,13 +28,14 @@ public class DeleteGroupSubCommandTest {
     private TelegramUserService telegramUserService;
 
     @BeforeEach
-    public void init() {
+    void init() {
         sendBotMessageService = Mockito.mock(SendBotMessageService.class);
         groupSubService = Mockito.mock(GroupSubService.class);
         telegramUserService = Mockito.mock(TelegramUserService.class);
 
         command = new DeleteGroupSubCommand(sendBotMessageService, telegramUserService, groupSubService);
     }
+
 
     @Test
     public void shouldProperlyReturnEmptySubscriptionList() {
@@ -42,10 +44,10 @@ public class DeleteGroupSubCommandTest {
         Long chatId = 23456L;
         Update update = prepareUpdate(chatId, DELETE_GROUP_SUB.getCommandName());
 
-        Mockito.when(telegramUserService.findByChatId(String.valueOf(chatId)))
+        Mockito.when(telegramUserService.findByChatId(chatId.toString()))
                 .thenReturn(Optional.of(new TelegramUser()));
 
-        String expectedMessage = "Пока нет подписок на группы. Чтобы добавить подписку напиши /addGroupSub";
+        String expectedMessage = "Пока нет подписок на группы. Чтобы добавить подписку напишите /addGroupSub";
 
         //when
         command.execute(update);
@@ -62,17 +64,18 @@ public class DeleteGroupSubCommandTest {
         Update update = prepareUpdate(chatId, DELETE_GROUP_SUB.getCommandName());
         TelegramUser telegramUser = new TelegramUser();
         GroupSub gs1 = setNewGroupSub(123, "GS1 Title");
+        //GroupSub gs1 = new GroupSub();
         //gs1.setId(123);
         //gs1.setTitle("GS1 Title");
-        telegramUser.setGroupSubs(Collections.singletonList(gs1));
-        Mockito.when(telegramUserService.findByChatId(String.valueOf(chatId)))
+        telegramUser.setGroupSubs(singletonList(gs1));
+        Mockito.when(telegramUserService.findByChatId(chatId.toString()))
                 .thenReturn(Optional.of(telegramUser));
 
         String expectedMessage = "Чтобы удалить подписку на группу - передайте команду вместе с ID группы. \n" +
                 "Например: /deleteGroupSub 16 \n\n" +
-                "я подготовил список всех групп, на которые вы подписаны \n\n" +
+                "я подготовил список всех групп, на которые Вы подписаны \n\n" +
                 "имя группы - ID группы \n\n" +
-                "GS1 Title - 123 \n";
+                "GS1 Title - 123\n";
 
         //when
         command.execute(update);
@@ -85,17 +88,17 @@ public class DeleteGroupSubCommandTest {
     public void shouldRejectByInvalidGroupId() {
         /// передали невалидный ID группы, например, /deleteGroupSub abc
         //given
-        Long chatId = 23456L;
+        Long chatId = 2345L;
         Update update = prepareUpdate(chatId, String.format("%s %s", DELETE_GROUP_SUB.getCommandName(), "groupSubId"));
         TelegramUser telegramUser = new TelegramUser();
-        GroupSub groupSub1 = setNewGroupSub(1234, "GS1 Title");
+        GroupSub groupSub1 = setNewGroupSub(123, "GS1 Title");
         //groupSub1.setId(123);
         //groupSub1.setTitle("GS1 Title");
-        telegramUser.setGroupSubs(Collections.singletonList(groupSub1));
-        Mockito.when(telegramUserService.findByChatId(String.valueOf(chatId)))
+        telegramUser.setGroupSubs(singletonList(groupSub1));
+        Mockito.when(telegramUserService.findByChatId(chatId.toString()))
                 .thenReturn(Optional.of(telegramUser));
 
-        String expectedMessage = "неправильный формат ID группы. \n " +
+        String expectedMessage = "Неправильный формат ID группы.\n " +
                 "ID должно быть целым положительным числом";
 
         //when
@@ -114,10 +117,10 @@ public class DeleteGroupSubCommandTest {
         Integer groupId = 1234;
         Update update = prepareUpdate(chatId, String.format("%s %s", DELETE_GROUP_SUB.getCommandName(), groupId));
 
-        GroupSub groupSub1 = setNewGroupSub(123, "SG1 Title");
+        GroupSub groupSub1 = setNewGroupSub(123, "GS1 Title");
         TelegramUser telegramUser = new TelegramUser();
         telegramUser.setChatId(chatId.toString());
-        telegramUser.setGroupSubs(Collections.singletonList(groupSub1));
+        telegramUser.setGroupSubs(singletonList(groupSub1));
         ArrayList<TelegramUser> userArrayList = new ArrayList<>();
         userArrayList.add(telegramUser);
         groupSub1.setTelegramUsers(userArrayList);

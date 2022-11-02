@@ -1,4 +1,5 @@
 com\github\liverpoolfc29\jrtb\command\CommandContainerTest.class
+com\github\liverpoolfc29\jrtb\command\DeleteGroupSubCommandTest.class
 com\github\liverpoolfc29\jrtb\command\HelpCommandTest.class
 com\github\liverpoolfc29\jrtb\service\SendBotMessageServiceTest.class
 com\github\liverpoolfc29\jrtb\repository\GroupSubRepositoryIT.class
@@ -7,6 +8,7 @@ com\github\liverpoolfc29\jrtb\javarushclient\JavaRushGroupClientTest.class
 com\github\liverpoolfc29\jrtb\command\AbstractCommandTest.class
 com\github\liverpoolfc29\jrtb\command\StopCommandTest.class
 com\github\liverpoolfc29\jrtb\command\UnknownCommandTest.class
+com\github\liverpoolfc29\jrtb\command\ListGroupSubCommandTest.class
 com\github\liverpoolfc29\jrtb\command\NoCommandTest.class
 com\github\liverpoolfc29\jrtb\command\StatCommandTest.class
 com\github\liverpoolfc29\jrtb\command\StartCommandTest.class

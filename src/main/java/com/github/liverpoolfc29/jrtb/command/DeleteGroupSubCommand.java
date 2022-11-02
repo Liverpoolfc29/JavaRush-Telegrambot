@@ -55,7 +55,7 @@ public class DeleteGroupSubCommand implements Command {
                 sendBotMessageService.sendMessage(chatId, "Не нашел такой группы =/");
             }
         } else {
-            sendBotMessageService.sendMessage(chatId, "Неправильный формат ID группы. \n " +
+            sendBotMessageService.sendMessage(chatId, "Неправильный формат ID группы.\n " +
                     "ID должно быть целым положительным числом");
         }
     }
@@ -66,19 +66,20 @@ public class DeleteGroupSubCommand implements Command {
                 .orElseThrow(NotFoundException::new)
                 .getGroupSubs();
         if (CollectionUtils.isEmpty(groupSubList)) {
-            message = "Пока нет подписок на группы. Чтобы добавить подписку напишиte /addGroupSub";
+            message = "Пока нет подписок на группы. Чтобы добавить подписку напишите /addGroupSub";
         } else {
-            message = "Чтобы удалить подписку на группу - передайte комадну вместе с ID группы. \n" +
-                    "Например: /deleteGroupSub 16 \n\n" +
-                    "я подготовил список всех групп, на которые Bы подписаны) \n\n" +
-                    "имя группы - ID группы \n\n" +
-                    "%s";
-        }
-        String userGroupData = groupSubList.stream()
-                .map(group -> format("%s - %s \n", group.getTitle(), group.getId()))
-                .collect(Collectors.joining());
+            String userGroupData = groupSubList.stream()
+                    .map(group -> format("%s - %s \n", group.getTitle(), group.getId()))
+                    .collect(Collectors.joining());
 
-        sendBotMessageService.sendMessage(chatId, format(message, userGroupData));
+            message = String.format("Чтобы удалить подписку на группу - передайте команду вместе с ID группы. \n" +
+                    "Например: /deleteGroupSub 16 \n\n" +
+                    "я подготовил список всех групп, на которые Вы подписаны \n\n" +
+                    "имя группы - ID группы \n\n" +
+                    "%s", userGroupData);
+        }
+
+        sendBotMessageService.sendMessage(chatId, message);
     }
 
 }

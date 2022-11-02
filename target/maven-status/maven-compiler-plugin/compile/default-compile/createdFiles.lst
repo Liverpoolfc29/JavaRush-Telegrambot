@@ -1,5 +1,6 @@
 com\github\liverpoolfc29\jrtb\command\StartCommand.class
 com\github\liverpoolfc29\jrtb\javarushclient\dto\GroupInfo.class
+com\github\liverpoolfc29\jrtb\command\DeleteGroupSubCommand.class
 com\github\liverpoolfc29\jrtb\service\SendBotMessageService.class
 com\github\liverpoolfc29\jrtb\command\UnknownCommand.class
 com\github\liverpoolfc29\jrtb\command\Command.class

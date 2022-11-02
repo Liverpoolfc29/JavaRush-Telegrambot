@@ -5,6 +5,7 @@ F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\test\java\c
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\test\java\com\github\liverpoolfc29\jrtb\command\UnknownCommandTest.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\test\java\com\github\liverpoolfc29\jrtb\command\NoCommandTest.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\test\java\com\github\liverpoolfc29\jrtb\repository\TelegramUserRepositoryIT.java
+F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\test\java\com\github\liverpoolfc29\jrtb\command\DeleteGroupSubCommandTest.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\test\java\com\github\liverpoolfc29\jrtb\command\StatCommandTest.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\test\java\com\github\liverpoolfc29\jrtb\service\GroupSubServiceTest.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\test\java\com\github\liverpoolfc29\jrtb\command\CommandContainerTest.java
@@ -12,3 +13,4 @@ F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\test\java\c
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\test\java\com\github\liverpoolfc29\jrtb\command\HelpCommandTest.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\test\java\com\github\liverpoolfc29\jrtb\service\SendBotMessageServiceTest.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\test\java\com\github\liverpoolfc29\jrtb\JavarushTelegramBotApplicationTests.java
+F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\test\java\com\github\liverpoolfc29\jrtb\command\ListGroupSubCommandTest.java
