@@ -7,6 +7,7 @@ F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\c
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\bot\JavaRushTelegramBot.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\JavarushTelegramBotApplication.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\repository\TelegramUserRepository.java
+F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\command\DeleteGroupSubCommand.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\repository\entity\GroupSub.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\javarushclient\dto\MeGroupInfoStatus.java
 F:\Git_File\My_Repo\MyRepo\MyRepoGitHubBase\JavaRushTelegrammBot\src\main\java\com\github\liverpoolfc29\jrtb\javarushclient\JavaRushGroupClient.java
