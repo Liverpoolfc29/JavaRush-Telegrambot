@@ -22,7 +22,7 @@ public class JavaRushPostClientImpl implements JavaRushPostClient {
     @Override
     public List<PostInfo> findNewPosts(Integer groupId, Integer lastPostId) {
         /*
-          В запросе добавляем несколько фильтров: (в настройки swagger)
+          В запросе добавляем несколько фильтров: (в настройки swagger https://javarush.ru/swagger-ui.html)
           order = NEW — чтобы в списке были вначале новые;
           groupKid = groupId — поиск только по определенным группам;
           limit = 15 — ограничиваем количество статей на запрос. У нас периодичность 15-20 минут и мы ожидаем, что за это время не будет написано БОЛЬШЕ, чем 15(!).
