@@ -1,6 +1,6 @@
-package com.github.liverpoolfc29.jrtb.javarushclient.dto;
+package com.github.liverpoolfc29.jrtb.javarushclient;
 
-import com.github.liverpoolfc29.jrtb.javarushclient.JavaRushPostClient;
+import com.github.liverpoolfc29.jrtb.javarushclient.dto.PostInfo;
 import kong.unirest.GenericType;
 import kong.unirest.Unirest;
 import org.springframework.beans.factory.annotation.Value;

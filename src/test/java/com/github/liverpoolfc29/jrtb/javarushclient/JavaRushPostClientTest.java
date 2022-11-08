@@ -1,6 +1,5 @@
 package com.github.liverpoolfc29.jrtb.javarushclient;
 
-import com.github.liverpoolfc29.jrtb.javarushclient.dto.JavaRushPostClientImpl;
 import com.github.liverpoolfc29.jrtb.javarushclient.dto.PostInfo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

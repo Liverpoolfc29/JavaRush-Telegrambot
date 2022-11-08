@@ -1,5 +1,7 @@
 package com.github.liverpoolfc29.jrtb.service;
 
+import com.github.liverpoolfc29.jrtb.javarushclient.JavaRushGroupClient;
+import com.github.liverpoolfc29.jrtb.javarushclient.JavaRushPostClient;
 import com.github.liverpoolfc29.jrtb.javarushclient.dto.GroupDiscussionInfo;
 import com.github.liverpoolfc29.jrtb.repository.GroupSubRepository;
 import com.github.liverpoolfc29.jrtb.repository.entity.GroupSub;
@@ -23,11 +25,13 @@ public class GroupSubServiceImpl implements GroupSubService {
 
     private final GroupSubRepository groupSubRepository;
     private final TelegramUserService telegramUserService;
+    private final JavaRushGroupClient javaRushGroupClient;
 
     @Autowired
-    public GroupSubServiceImpl(GroupSubRepository groupSubRepository, TelegramUserService telegramUserService) {
+    public GroupSubServiceImpl(GroupSubRepository groupSubRepository, TelegramUserService telegramUserService, JavaRushGroupClient javaRushGroupClient) {
         this.groupSubRepository = groupSubRepository;
         this.telegramUserService = telegramUserService;
+        this.javaRushGroupClient = javaRushGroupClient;
     }
 
 
@@ -48,6 +52,7 @@ public class GroupSubServiceImpl implements GroupSubService {
         } else {
             groupSub = new GroupSub();
             groupSub.addUser(telegramUser);
+            groupSub.setLastArticleId(javaRushGroupClient.findLastPostId(groupDiscussionInfo.getId()));
             groupSub.setId(groupDiscussionInfo.getId());
             groupSub.setTitle(groupDiscussionInfo.getTitle());
         }

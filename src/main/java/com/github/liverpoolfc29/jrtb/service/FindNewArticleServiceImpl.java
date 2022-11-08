@@ -30,7 +30,7 @@ public class FindNewArticleServiceImpl implements FindNewArticleService {
     @Override
     public void findNewArticles() {
         // При помощи groupService мы находим все группы, которые есть в БД.
-        // Потом разбегаемся по всем группам и для каждой вызываем созданный в прошлой статье клиент — javaRushPostClient.findNewPosts.
+        // Потом разбегаемся по всем группам и для каждой вызываем — javaRushPostClient.findNewPosts.
         groupSubService.findAll().forEach(groupSub -> {
             List<PostInfo> newPosts = javaRushPostClient.findNewPosts(groupSub.getId(), groupSub.getLastArticleId());
 
@@ -55,10 +55,6 @@ public class FindNewArticleServiceImpl implements FindNewArticleService {
                 .forEach(it -> sendBotMessageService.sendMessage(it.getChatId(), messagesWithNewArticles));
     }
 
-    private Object getPostUrl(String key) {
-        return String.format(JAVARUSH_WEB_POST_FORMAT, key);
-    }
-
     private void setNewLastArticleId(GroupSub groupSub, List<PostInfo> newPosts) {
         // Далее при помощи метода setNewArticleId мы обновляем ID нашей последней новой статьи, чтобы наша база данных знала, что мы уже обработали новые.
         newPosts.stream().mapToInt(PostInfo::getId).max()
@@ -66,6 +62,10 @@ public class FindNewArticleServiceImpl implements FindNewArticleService {
                     groupSub.setLastArticleId(id);
                     groupSubService.save(groupSub);
                 });
+    }
+
+    private Object getPostUrl(String key) {
+        return String.format(JAVARUSH_WEB_POST_FORMAT, key);
     }
 
 }
