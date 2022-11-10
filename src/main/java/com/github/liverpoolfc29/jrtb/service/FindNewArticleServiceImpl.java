@@ -5,11 +5,13 @@ import com.github.liverpoolfc29.jrtb.javarushclient.dto.PostInfo;
 import com.github.liverpoolfc29.jrtb.repository.entity.GroupSub;
 import com.github.liverpoolfc29.jrtb.repository.entity.TelegramUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class FindNewArticleServiceImpl implements FindNewArticleService {
 
     public static final String JAVARUSH_WEB_POST_FORMAT = "https://javarush.ru/groups/posts/%s";
