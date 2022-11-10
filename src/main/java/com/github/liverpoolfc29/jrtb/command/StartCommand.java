@@ -26,7 +26,8 @@ public class StartCommand implements Command {
         String chatId = update.getMessage().getChatId().toString();
 
         telegramUserService.findByChatId(chatId).ifPresentOrElse(
-                // Далее, используя прелести Optional в джаве, работает следующая логика: если пользователь в базе у нас есть, просто делаем его активным, если нет — создаем нового активного.
+                // Далее, используя прелести Optional в джаве, работает следующая логика:
+                // если пользователь в базе у нас есть, просто делаем его активным, если нет — создаем нового активного.
                 user -> {
                     user.setActive(true);
                     telegramUserService.save(user);
