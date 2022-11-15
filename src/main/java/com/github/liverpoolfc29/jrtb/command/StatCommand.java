@@ -1,10 +1,12 @@
 package com.github.liverpoolfc29.jrtb.command;
 
+import com.github.liverpoolfc29.jrtb.command.annotation.AdminCommand;
 import com.github.liverpoolfc29.jrtb.service.SendBotMessageService;
 import com.github.liverpoolfc29.jrtb.service.TelegramUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+@AdminCommand
 public class StatCommand implements Command {
 
     private final TelegramUserService telegramUserService;

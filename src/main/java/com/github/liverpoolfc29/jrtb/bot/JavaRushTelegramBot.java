@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import java.util.List;
+
 import static com.github.liverpoolfc29.jrtb.command.CommandName.NO;
 
 @Component
@@ -29,20 +31,25 @@ public class JavaRushTelegramBot extends TelegramLongPollingBot {
     //Мы передаем в виде аргумента TelegramUserService, добавляя аннотацию Autowired. Это значит, что ее мы получим из Application Context.
 
     @Autowired
-    public JavaRushTelegramBot(TelegramUserService telegramUserService, JavaRushGroupClient javaRushGroupClient, GroupSubService groupSubService) {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService, javaRushGroupClient, groupSubService);
+    public JavaRushTelegramBot(TelegramUserService telegramUserService, JavaRushGroupClient javaRushGroupClient,
+                               GroupSubService groupSubService, @Value("#{'${bot.admins}'.split(',')}") List<String> admins) {
+
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this),
+                telegramUserService, javaRushGroupClient, groupSubService, admins);
     }
 
     @Override
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String message = update.getMessage().getText().trim();
+            String userName = update.getMessage().getFrom().getUserName();
+
             if (message.startsWith(COMMAND_PREFIX)) {
                 String commandIdentifier = message.split(" ")[0].toLowerCase();
 
-                commandContainer.retrieveCommand(commandIdentifier).execute(update);
+                commandContainer.retrieveCommand(commandIdentifier, userName).execute(update);
             } else {
-                commandContainer.retrieveCommand(NO.getCommandName()).execute(update);
+                commandContainer.retrieveCommand(NO.getCommandName(), userName).execute(update);
             }
 
 /*
