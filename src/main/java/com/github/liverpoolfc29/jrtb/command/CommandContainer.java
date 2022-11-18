@@ -40,6 +40,7 @@ public class CommandContainer {
 
     public Command retrieveCommand(String commandIdentifier, String userName) {
         Command orDefault = (Command) commandImmutableMap.getOrDefault(commandIdentifier, unknownCommand);
+
         if (isAdminComand(orDefault)) {
             if (admins.contains(userName)) {
                 return orDefault;

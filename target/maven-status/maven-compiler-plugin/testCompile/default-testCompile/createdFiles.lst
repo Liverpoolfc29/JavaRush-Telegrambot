@@ -10,6 +10,7 @@ com\github\liverpoolfc29\jrtb\command\AbstractCommandTest.class
 com\github\liverpoolfc29\jrtb\command\StopCommandTest.class
 com\github\liverpoolfc29\jrtb\command\UnknownCommandTest.class
 com\github\liverpoolfc29\jrtb\command\ListGroupSubCommandTest.class
+com\github\liverpoolfc29\jrtb\command\AdminHelpCommandTest.class
 com\github\liverpoolfc29\jrtb\command\NoCommandTest.class
 com\github\liverpoolfc29\jrtb\command\StatCommandTest.class
 com\github\liverpoolfc29\jrtb\command\StartCommandTest.class

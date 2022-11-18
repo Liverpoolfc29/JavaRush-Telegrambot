@@ -26,4 +26,5 @@ public class AdminHelpCommand implements Command {
     public void execute(Update update) {
         sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), ADMIN_HELP_MESSAGE);
     }
+
 }
