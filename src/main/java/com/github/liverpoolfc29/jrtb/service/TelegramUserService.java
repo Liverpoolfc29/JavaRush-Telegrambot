@@ -14,7 +14,7 @@ public interface TelegramUserService {
     /**
      * Save provided {@link TelegramUser} entity.
      *
-     * @param  telegramUser provided telegram user.
+     * @param telegramUser provided telegram user.
      */
     void save(TelegramUser telegramUser);
 
@@ -23,7 +23,7 @@ public interface TelegramUserService {
      *
      * @return the collection of the active {@link TelegramUser} objects.
      */
-    List<TelegramUser> retrieveAllActiveUsers();
+    List<TelegramUser> findAllActiveUsers();
 
     /**
      * Find {@link TelegramUser} by chatId.
@@ -32,4 +32,11 @@ public interface TelegramUserService {
      * @return {@link TelegramUser} with provided chat ID or null otherwise.
      */
     Optional<TelegramUser> findByChatId(String chatId);
+
+    /**
+     * Retrieve all inactive {@link TelegramUser}
+     *
+     * @return the collection of the inactive {@link TelegramUser} objects.
+     */
+    List<TelegramUser> findAllInActiveUsers();
 }
