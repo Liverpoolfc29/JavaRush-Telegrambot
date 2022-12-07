@@ -3,12 +3,14 @@ package com.github.liverpoolfc29.jrtb.service;
 import com.github.liverpoolfc29.jrtb.dto.GroupStatDTO;
 import com.github.liverpoolfc29.jrtb.dto.StatisticDTO;
 import com.github.liverpoolfc29.jrtb.repository.entity.TelegramUser;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.springframework.util.CollectionUtils.isEmpty;
 
+@Service
 public class StatisticsServiceImpl implements StatisticsService {
 
     private final GroupSubService groupSubService;
@@ -35,4 +37,5 @@ public class StatisticsServiceImpl implements StatisticsService {
     private double getGroupsPerUser(List<TelegramUser> allActiveUsers) {
         return (double) allActiveUsers.stream().mapToInt(it -> it.getGroupSubs().size()).sum() / allActiveUsers.size();
     }
+
 }
