@@ -20,6 +20,7 @@ com\github\liverpoolfc29\jrtb\command\ListGroupSubCommand.class
 com\github\liverpoolfc29\jrtb\javarushclient\JavaRushGroupClientImpl$3.class
 com\github\liverpoolfc29\jrtb\repository\TelegramUserRepository.class
 com\github\liverpoolfc29\jrtb\javarushclient\dto\GroupInfoType.class
+com\github\liverpoolfc29\jrtb\command\AdminHelpCommand.class
 com\github\liverpoolfc29\jrtb\javarushclient\dto\GroupRequestArgs$GroupRequestArgsBuilder.class
 com\github\liverpoolfc29\jrtb\javarushclient\dto\UserPublicStatus.class
 com\github\liverpoolfc29\jrtb\javarushclient\dto\PostType.class
@@ -32,6 +33,7 @@ com\github\liverpoolfc29\jrtb\JavarushTelegramBotApplication.class
 com\github\liverpoolfc29\jrtb\javarushclient\dto\MeGroupInfo.class
 com\github\liverpoolfc29\jrtb\bot\JavaRushTelegramBot.class
 com\github\liverpoolfc29\jrtb\javarushclient\dto\GroupRequestArgs.class
+com\github\liverpoolfc29\jrtb\command\annotation\AdminCommand.class
 com\github\liverpoolfc29\jrtb\javarushclient\JavaRushGroupClientImpl$1.class
 com\github\liverpoolfc29\jrtb\command\StatCommand.class
 com\github\liverpoolfc29\jrtb\javarushclient\dto\LikeStatus.class
