@@ -21,8 +21,8 @@ public class GroupSub {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "last_article_id")
-    private Integer lastArticleId;
+    @Column(name = "last_post_id")
+    private Integer lastPostId;
 
     // у нас есть дополнительное поле users, которое будет содержать коллекцию всех пользователей, подписанных на группу.
     // И две аннотации — ManyToMany и JoinTable — как раз для этого нам и нужны.

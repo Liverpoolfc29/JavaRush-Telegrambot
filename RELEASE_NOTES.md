@@ -21,7 +21,7 @@
 * JRTB-7: added the ability to delete group subscription.
 
 ## 0.7.0-SNAPSHOT
-*   JRTB-4: added ability to send notifications about new articles
+*   JRTB-4: added ability to send notifications about new posts
 *   JRTB-8: added ability to set inactive telegram user
 *   JRTB-9: added ability to set active user and/or start using it.
 

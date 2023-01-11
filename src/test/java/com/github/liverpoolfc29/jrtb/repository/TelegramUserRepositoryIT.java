@@ -66,7 +66,7 @@ public class TelegramUserRepositoryIT {
         for (int i = 0; i < groupSubs.size(); i++) {
             Assertions.assertEquals(String.format("g%s", (i + 1)), groupSubs.get(i).getTitle());
             Assertions.assertEquals(i + 1, groupSubs.get(i).getId());
-            Assertions.assertEquals(i + 1, groupSubs.get(i).getLastArticleId());
+            Assertions.assertEquals(i + 1, groupSubs.get(i).getLastPostId());
         }
     }
 
