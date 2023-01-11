@@ -42,7 +42,7 @@ public class StatCommand implements Command {
                 .map(it -> String.format("%s (id = %s) - %s подписчиков", it.getTitle(), it.getId(), it.getActiveUserCount()))
                 .collect(Collectors.joining("\n"));
 
-        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), String.format(STAT_MESSAGE,
+        sendBotMessageService.sendMessage(update.getMessage().getChatId(), String.format(STAT_MESSAGE,
                 statisticDTO.getActiveUserCount(),
                 statisticDTO.getInactiveUserCount(),
                 statisticDTO.getAverageGroupCountByUser(),
@@ -50,7 +50,7 @@ public class StatCommand implements Command {
 
         /*
         Old version !!!!
-        // мы получаем список всех активных пользователей при помощи метода retrieveAllActiveUsers и получаем размер коллекции.
+        // мы получаем список всех активных пользователей при помощи метода (retrieve)findAllActiveUsers и получаем размер коллекции.
         int activeUserCount = telegramUserService.findAllActiveUsers().size();
         sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), String.format(STAT_MESSAGE, activeUserCount));
          */

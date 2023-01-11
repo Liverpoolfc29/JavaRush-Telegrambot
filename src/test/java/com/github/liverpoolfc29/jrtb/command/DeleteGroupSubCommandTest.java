@@ -43,7 +43,7 @@ public class DeleteGroupSubCommandTest {
         Long chatId = 23456L;
         Update update = prepareUpdate(chatId, DELETE_GROUP_SUB.getCommandName());
 
-        Mockito.when(telegramUserService.findByChatId(chatId.toString()))
+        Mockito.when(telegramUserService.findByChatId(chatId))
                 .thenReturn(Optional.of(new TelegramUser()));
 
         String expectedMessage = "Пока нет подписок на группы. Чтобы добавить подписку напишите /addGroupSub";
@@ -52,7 +52,7 @@ public class DeleteGroupSubCommandTest {
         command.execute(update);
 
         //then
-        Mockito.verify(sendBotMessageService).sendMessage(chatId.toString(), expectedMessage);
+        Mockito.verify(sendBotMessageService).sendMessage(chatId, expectedMessage);
     }
 /*
     //Тест падает я так и не смог понять в чем проблема
@@ -96,7 +96,7 @@ public class DeleteGroupSubCommandTest {
         //groupSub1.setId(123);
         //groupSub1.setTitle("GS1 Title");
         telegramUser.setGroupSubs(singletonList(groupSub1));
-        Mockito.when(telegramUserService.findByChatId(chatId.toString()))
+        Mockito.when(telegramUserService.findByChatId(chatId))
                 .thenReturn(Optional.of(telegramUser));
 
         String expectedMessage = "Неправильный формат ID группы.\n " +
@@ -106,7 +106,7 @@ public class DeleteGroupSubCommandTest {
         command.execute(update);
 
         //then
-        Mockito.verify(sendBotMessageService).sendMessage(chatId.toString(), expectedMessage);
+        Mockito.verify(sendBotMessageService).sendMessage(chatId, expectedMessage);
     }
 
     @Test
@@ -120,13 +120,13 @@ public class DeleteGroupSubCommandTest {
 
         GroupSub groupSub1 = setNewGroupSub(123, "GS1 Title");
         TelegramUser telegramUser = new TelegramUser();
-        telegramUser.setChatId(chatId.toString());
+        telegramUser.setChatId(chatId);
         telegramUser.setGroupSubs(singletonList(groupSub1));
         ArrayList<TelegramUser> userArrayList = new ArrayList<>();
         userArrayList.add(telegramUser);
         groupSub1.setTelegramUsers(userArrayList);
         Mockito.when(groupSubService.findById(groupId)).thenReturn(Optional.of(groupSub1));
-        Mockito.when(telegramUserService.findByChatId(chatId.toString()))
+        Mockito.when(telegramUserService.findByChatId(chatId))
                 .thenReturn(Optional.of(telegramUser));
 
         String expectedMessage = "Удалил подписку на группу: GS1 Title";
@@ -137,7 +137,7 @@ public class DeleteGroupSubCommandTest {
         //then
         userArrayList.remove(telegramUser);
         Mockito.verify(groupSubService).save(groupSub1);
-        Mockito.verify(sendBotMessageService).sendMessage(chatId.toString(), expectedMessage);
+        Mockito.verify(sendBotMessageService).sendMessage(chatId, expectedMessage);
     }
 
     @Test
@@ -158,7 +158,7 @@ public class DeleteGroupSubCommandTest {
 
         //then
         Mockito.verify(groupSubService).findById(groupId);
-        Mockito.verify(sendBotMessageService).sendMessage(chatId.toString(), expectedMessage);
+        Mockito.verify(sendBotMessageService).sendMessage(chatId, expectedMessage);
     }
 
     private GroupSub setNewGroupSub(Integer id, String title) {

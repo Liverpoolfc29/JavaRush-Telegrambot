@@ -12,7 +12,7 @@ import java.util.List;
  */
 
 @Repository
-public interface TelegramUserRepository extends JpaRepository<TelegramUser, String> {
+public interface TelegramUserRepository extends JpaRepository<TelegramUser, Long> {
 
     // get all records from the tg_user table that have field active = true
     List<TelegramUser> findAllByActiveTrue();

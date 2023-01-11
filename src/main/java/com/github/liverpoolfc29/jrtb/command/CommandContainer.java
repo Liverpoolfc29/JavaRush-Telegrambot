@@ -39,7 +39,7 @@ public class CommandContainer {
         this.admins = admins;
     }
 
-    public Command retrieveCommand(String commandIdentifier, String userName) {
+    public Command findCommand(String commandIdentifier, String userName) {
         Command orDefault = (Command) commandImmutableMap.getOrDefault(commandIdentifier, unknownCommand);
 
         if (isAdminComand(orDefault)) {
