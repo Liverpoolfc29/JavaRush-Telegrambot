@@ -23,7 +23,7 @@ public class StartCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        String chatId = update.getMessage().getChatId().toString();
+        Long chatId = update.getMessage().getChatId();
 
         telegramUserService.findByChatId(chatId).ifPresentOrElse(
                 // Далее, используя прелести Optional в джаве, работает следующая логика:

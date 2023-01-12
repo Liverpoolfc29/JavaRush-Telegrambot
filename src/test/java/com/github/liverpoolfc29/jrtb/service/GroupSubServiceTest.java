@@ -21,7 +21,7 @@ public class GroupSubServiceTest {
     private TelegramUser newTelegramUser;
     private JavaRushGroupClient javaRushGroupClient;
 
-    private final static String CHAT_ID = "1234";
+    private final static Long CHAT_ID = 1234L;
     private final static Integer GROUP_ID = 1122;
     private final static Integer LAST_POST_ID = 29;
     private final static String TITLE = "G1";
@@ -61,7 +61,7 @@ public class GroupSubServiceTest {
         GroupSub expectedGroupSub = new GroupSub();
         expectedGroupSub.setId(groupDiscussionInfo.getId());
         expectedGroupSub.setTitle(groupDiscussionInfo.getTitle());
-        expectedGroupSub.setLastArticleId(LAST_POST_ID);
+        expectedGroupSub.setLastPostId(LAST_POST_ID);
         expectedGroupSub.addUser(newTelegramUser);
 
         //when
@@ -75,7 +75,7 @@ public class GroupSubServiceTest {
     public void shouldProperlyAddUserToExistingGroup() {
         //given
         TelegramUser oldTelegramUser = new TelegramUser();
-        oldTelegramUser.setChatId("21");
+        oldTelegramUser.setChatId(21L);
         oldTelegramUser.setActive(true);
 
         GroupDiscussionInfo groupDiscussionInfo = new GroupDiscussionInfo();

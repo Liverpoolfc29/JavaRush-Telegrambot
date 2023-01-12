@@ -1,7 +1,7 @@
 package com.github.liverpoolfc29.jrtb.job;
 
 
-import com.github.liverpoolfc29.jrtb.service.FindNewArticleService;
+import com.github.liverpoolfc29.jrtb.service.FindNewPostsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -12,33 +12,33 @@ import java.time.ZoneOffset;
 
 /**
  * Класс для EnableScheduling. В нем нужно создать в нем метод, который будет запускаться периодически. (добавить в ApplicationContext)
- * Job for finding new articles.
+ * Job for finding new posts.
  */
 
 @Component
 @Slf4j
-public class FindNewArticleJob {
+public class FindNewPostsJob {
 
-    private final FindNewArticleService findNewArticleService;
+    private final FindNewPostsService findNewPostsService;
 
 
     @Autowired
-    public FindNewArticleJob(FindNewArticleService findNewArticleService) {
-        this.findNewArticleService = findNewArticleService;
+    public FindNewPostsJob(FindNewPostsService findNewPostsService) {
+        this.findNewPostsService = findNewPostsService;
     }
 
-    @Scheduled(fixedRateString = "${bot.recountNewArticleFixedRate}")
-    public void findNewArticles() {
+    @Scheduled(fixedRateString = "${bot.recountNewPostFixedRate}")
+    public void findNewPosts() {
 
         LocalDateTime start = LocalDateTime.now();
 
-        log.info("Find new article job started.");
+        log.info("Find new Posts job started.");
 
-        findNewArticleService.findNewArticles();
+        findNewPostsService.findNewPosts();
 
         LocalDateTime end = LocalDateTime.now();
 
-        log.info("Find new articles job finished. Took seconds: {}",
+        log.info("Find new Posts job finished. Took seconds: {}",
                 end.toEpochSecond(ZoneOffset.UTC) - start.toEpochSecond(ZoneOffset.UTC));
     }
 
